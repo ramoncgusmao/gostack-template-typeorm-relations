@@ -16,7 +16,6 @@ class OrdersRepository implements IOrdersRepository {
       customer,
       order_products: products,
     });
-    console.log('order', order);
     await this.ormRepository.save(order);
 
     return order;
