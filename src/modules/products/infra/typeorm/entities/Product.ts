@@ -14,7 +14,7 @@ class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Entity('costumers')
+  @Column()
   name: string;
 
   @Column()
@@ -23,7 +23,7 @@ class Product {
   @Column()
   quantity: number;
 
-  @OneToMany(() => OrdersProducts, orderProduct => orderProduct.product)
+  @OneToMany(() => OrdersProducts, order_products => order_products.product)
   order_products: OrdersProducts[];
 
   @CreateDateColumn()
